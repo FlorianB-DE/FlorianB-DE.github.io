@@ -3,24 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Florian Becker</title>
-    <link rel="icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.png">
+    <link href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.png" rel="icon">
 </head>
 <style>
-    .me {
-        width: 25%;
-        height: 25%;
 
-        margin-left: 70%;
-
-        border: 2px solid gray;
-        border-radius: 15px;
-    }
-
-    h1 {
-        margin-right: 10%;
-    }
-
-    .footer{
+    .footer {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -36,19 +23,48 @@
         border-top-right-radius: 100%;
     }
 
-    #followMe{
+    .socialIcon{
+        width: 45px;
+    }
+
+    #followMe {
         margin-top: 1em;
+    }
+
+    #me {
+        width: 25%;
+        height: 25%;
+
+        margin-left: 70%;
+
+        border: 2px solid gray;
+        border-radius: 15px;
+    }
+
+    #thatsme{
+        position: relative;
+        right: 2.5%;
+        font-family: 'Britannic Bold';
+        font-size: 45px;
     }
 
 </style>
 <body>
-<h1 align="center">That's me</h1>
-<img src="self.jpg" class="me">
+<h1 align="center" id="thatsme">That's me:</h1><br>
+<img id="me" src="self.jpg">
 
 <footer class="footer">
-    <div id="followMe" align="center">Follow me on social media:</div><br>
+    <div align="center" id="followMe">Follow me on social media:</div>
+    <br>
     <div align="center">
-        <a href="https://www.instagram.com/beflo00/"> <img src="https://en.instagram-brand.com/wp-content/themes/ig-branding/prj-ig-branding/assets/images/ig-logo-black.svg"></a>
+        <a href="https://www.instagram.com/beflo00/">
+            <img src="https://en.instagram-brand.com/wp-content/themes/ig-branding/prj-ig-branding/assets/images/ig-logo-black.svg" class="socialIcon"></a>
+        <a href="https://github.com/FlorianB-DE">
+            <img src="github.png" class="socialIcon"></a>
+        <a href="https://git.noc.ruhr-uni-bochum.de/beckefp6">
+            <img src="https://about.gitlab.com/images/devops-tools/gitlab-logo.svg" class="socialIcon"></a>
+        <a href="https://www.reddit.com/user/ShadowArcher21">
+            <img src="https://www.redditinc.com/assets/images/site/logo01.svg" class="socialIcon"></a>
     </div>
 </footer>
 </body>
