@@ -1,0 +1,27 @@
+#sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 12rem;
+    height: 100%;
+
+    display: block;
+
+    overflow-x: hidden;
+    background-image: linear-gradient(black, gray);
+}
+
+.tableentry{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 1em;
+    padding-top: 1em;
+    color: lightgray;
+    font-size: 200%;
+}
+
+#first{
+    display: inline-block;
+    padding-top: 2em;
+}
