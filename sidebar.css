@@ -11,7 +11,7 @@
     display: block;
 
     overflow-x: hidden;
-    background-image: linear-gradient(white, #eee);
+    background-color: #f0f0f0;
 }
 
 .tableentry{
@@ -25,9 +25,7 @@
 
     width: 100%;
 
-    background-color: white;
-
-    color: lightgray;
+    color: gray;
     text-decoration: none;
     font-size: 2em;
 
@@ -36,8 +34,8 @@
 
 .tableentry:hover{
     background-image: none;
-    background-color: #eee;
-    color: #b4b4b4;
+    background-color: gray;
+    color: white;
 }
 .active, .tableentry:active{
     background-image: none;
