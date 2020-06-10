@@ -10,9 +10,15 @@
 
     overflow-y: scroll;
 
+    -ms-overflow-style: none;
+
     scroll-behavior: smooth;
 
     background-color: #eee;
+}
+
+#mainbody::-webkit-scrollbar{
+    display: none;
 }
 
 body , html{

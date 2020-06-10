@@ -6,3 +6,9 @@ Array.prototype.forEach.call(document.getElementsByClassName("tableentry"), func
         this.className += " active";
     })
 });
+
+window.onscroll = function (ev) {
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
+        console.log("bottom");
+    }
+}
