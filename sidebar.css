@@ -1,27 +1,49 @@
 #sidebar{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
 
     width: 12rem;
     height: 100%;
 
+    border-right: 35px solid white;
+
     display: block;
 
     overflow-x: hidden;
-    background-image: linear-gradient(black, gray);
+    background-image: linear-gradient(#111, #444);
 }
 
 .tableentry{
+
     display: inline-block;
-    text-decoration: none;
-    margin-left: 1em;
-    padding-top: 1em;
+
+    padding-left: 10%;
+
+    padding-top: .25em;
+    padding-bottom: .25em;
+
+    width: 100%;
+
+    background-image: linear-gradient(#333, black);
+
     color: lightgray;
-    font-size: 200%;
+    text-decoration: none;
+    font-size: 2em;
+
+    cursor: pointer;
+}
+
+.tableentry:hover{
+    background-image: none;
+    background-color: #801c1c;
+}
+.active, .tableentry:hover{
+    background-image: none;
+    background-color: #801c1c;
 }
 
 #first{
     display: inline-block;
-    padding-top: 2em;
+    padding-top: 2.5em;
 }

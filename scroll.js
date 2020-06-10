@@ -1,5 +1,8 @@
-let entries = document.getElementsByClassName("tableentry");
-
-Array.prototype.forEach.call(entries, function (e) {
-    console.log(e);
+Array.prototype.forEach.call(document.getElementsByClassName("tableentry"), function (e) {
+    e.addEventListener("click", function () {
+        Array.prototype.forEach.call(document.getElementsByClassName("active"), function (current) {
+            current.className = current.className.replace(" active", "");
+        });
+        this.className += " active";
+    })
 });
