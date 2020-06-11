@@ -8,6 +8,7 @@
     margin-top: 40px;
     margin-left: calc(12em + 80px);
 
+    overflow-x: hidden;
     overflow-y: scroll;
 
     -ms-overflow-style: none;
@@ -15,6 +16,11 @@
     scroll-behavior: smooth;
 
     background-color: #eee;
+}
+
+.article{
+    width: 100%;
+    padding-left: 10px;
 }
 
 #mainbody::-webkit-scrollbar{
