@@ -23,4 +23,6 @@ mainbody.onscroll = function () {
             clearInterval(timer);
         }
     }, 50);
+
+    //Array.prototype.forEach.call(document.getElementsByClassName("article"), function (e) {})
 };
