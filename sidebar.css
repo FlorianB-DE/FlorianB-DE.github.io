@@ -6,7 +6,7 @@
     width: 12rem;
     height: 100%;
 
-    border-right: 35px solid #06f8d3;
+    border-right: 35px solid #58b9cb;
 
     display: block;
 
@@ -39,7 +39,7 @@
 }
 .active, .tableentry:active{
     background-image: none;
-    background-color: #58b9cb;
+    background-color: #198ea0;
     color: white;
 }
 
