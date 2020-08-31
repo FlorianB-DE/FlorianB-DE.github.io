@@ -141,11 +141,11 @@ function foodCheck(){
 let updateTimer = setInterval(function (){
     snake.update();
     foodCheck();
+    document.getElementById("score").innerText = "Score: " + score.toString();
 }, 1000 / targetFPS);
 
 function gameOver(){
     clearInterval(updateTimer);
-    console.log(score);
 }
 
 /*setInterval(function (){
