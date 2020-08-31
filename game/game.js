@@ -75,6 +75,7 @@ class Point{
 
 
     draw(){
+        ctx.fillStyle = "#000";
         ctx.fillRect(this.x, this.y, blockSize, blockSize);
     }
 }
@@ -122,6 +123,7 @@ function foodCreate(){
     foodY = Math.floor(Math.random()*canvas.height);
     foodX -= foodX % blockSize;
     foodY -= foodY % blockSize;
+    ctx.fillStyle = "#9a0606";
     ctx.fillRect(foodX, foodY, blockSize, blockSize);
 }
 foodCreate();
