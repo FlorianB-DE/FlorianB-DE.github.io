@@ -117,6 +117,7 @@ document.addEventListener("keypress", function (event){
 
 let foodX = 0;
 let foodY = 0;
+let score = 0;
 
 function foodCreate(){
     foodX = Math.floor(Math.random()*canvas.width);
@@ -131,7 +132,7 @@ foodCreate();
 function foodCheck(){
     const first = snake.body[0];
     if(first.x === foodX && first.y === foodY){
-        console.log("test");
+        score++;
         snake.feed();
         foodCreate();
     }
@@ -144,6 +145,7 @@ let updateTimer = setInterval(function (){
 
 function gameOver(){
     clearInterval(updateTimer);
+    console.log(score);
 }
 
 /*setInterval(function (){
