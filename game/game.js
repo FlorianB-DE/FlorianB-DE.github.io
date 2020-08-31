@@ -27,11 +27,11 @@ class Snake {
         const first = this.body[0];
         first.x += xDir * blockSize;
         first.y += yDir * blockSize;
-        if (first.x > canvas.width)
+        if (first.x > canvas.width - blockSize)
             first.x = 0;
         else if (first.x < 0)
             first.x = canvas.width - blockSize;
-        if (first.y > canvas.height)
+        if (first.y > canvas.height - blockSize)
             first.y = 0;
         else if (first.y < 0)
             first.y = canvas.height - blockSize;
@@ -118,14 +118,23 @@ document.addEventListener("keypress", function (event){
 let foodX = 0;
 let foodY = 0;
 let score = 0;
+let foodInSnake = true;
 
 function foodCreate(){
-    foodX = Math.floor(Math.random()*canvas.width);
-    foodY = Math.floor(Math.random()*canvas.height);
-    foodX -= foodX % blockSize;
-    foodY -= foodY % blockSize;
-    ctx.fillStyle = "#9a0606";
-    ctx.fillRect(foodX, foodY, blockSize, blockSize);
+    while (foodInSnake){
+        foodInSnake= false;
+        foodX = Math.floor(Math.random() * canvas.width);
+        foodY = Math.floor(Math.random() * canvas.height);
+        foodX -= foodX % blockSize;
+        foodY -= foodY % blockSize;
+        for(let i = 1; i < snake.body.length; i++) {
+            if(foodX === snake.body[i].x && foodY === snake.body[i].y){
+                foodInSnake = true;
+                }
+            }
+        ctx.fillStyle = "#9a0606";
+        ctx.fillRect(foodX, foodY, blockSize, blockSize);
+    }
 }
 foodCreate();
 
@@ -134,6 +143,7 @@ function foodCheck(){
     if(first.x === foodX && first.y === foodY){
         score++;
         snake.feed();
+        foodInSnake = true;
         foodCreate();
     }
 }
