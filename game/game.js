@@ -6,31 +6,6 @@ const blockSize = 10;
 
 let xDir = 0, yDir = 0;
 
-document.addEventListener("keypress", function (event){
-    switch (event.key){
-        case 'A':
-        case 'a':
-            resetInputs();
-            xDir--;
-            break;
-        case 'S':
-        case 's':
-            resetInputs();
-            yDir++;
-            break;
-        case 'D':
-        case 'd':
-            resetInputs();
-            xDir++;
-            break;
-        case 'W':
-        case 'w':
-            resetInputs();
-            yDir--;
-            break;
-    }
-});
-
 function resetInputs(){
     xDir = 0;
     yDir = 0;
@@ -61,8 +36,16 @@ class Snake {
         else if (first.y < 0)
             first.y = canvas.height - blockSize;
         first.draw();
+        this.tailTest();
     }
 
+    tailTest(){
+        const first = this.body[0];
+        for (let i = 2; i < this.body.length; i++){
+            if (first.x === this.body[i].x && first.y === this.body[i].y)
+                gameOver();
+        }
+    }
     update(){
         const lastElement = this.getLast();
         ctx.clearRect(lastElement.x, lastElement.y, blockSize, blockSize);
@@ -81,7 +64,6 @@ class Snake {
         const lastElement = this.getLast();
         this.body.push(new Point(lastElement.x, lastElement.y));
     }
-
 }
 
 class Point{
@@ -91,23 +73,6 @@ class Point{
         this.newPoint = true;
     }
 
-    update(){
-        if (this.newPoint){
-            this.newPoint = false;
-            return;
-        }
-        this.x += xDir * blockSize;
-        this.y += yDir * blockSize;
-        if (this.x > canvas.width)
-            this.x = 0;
-        else if (this.x < 0)
-            this.x = canvas.width - blockSize;
-        if (this.y > canvas.height)
-            this.y = 0;
-        else if (this.y < 0)
-            this.y = canvas.height - blockSize;
-        this.draw();
-    }
 
     draw(){
         ctx.fillRect(this.x, this.y, blockSize, blockSize);
@@ -116,10 +81,75 @@ class Point{
 
 const snake = new Snake();
 
-setInterval(function (){
+document.addEventListener("keypress", function (event){
+    switch (event.key){
+        case 'A':
+        case 'a':
+            if(xDir === 0 || snake.body.length < 3) {
+                resetInputs();
+                xDir--;
+            }
+            break;
+        case 'S':
+        case 's':
+            if(yDir === 0 || snake.body.length < 3) {
+                resetInputs();
+                yDir++;
+            }
+            break;
+        case 'D':
+        case 'd':
+            if(xDir === 0 || snake.body.length < 3) {
+                resetInputs();
+                xDir++;
+            }
+            break;
+        case 'W':
+        case 'w':
+            if(yDir === 0 || snake.body.length < 3) {
+                resetInputs();
+                yDir--;
+            }
+            break;
+    }
+});
+
+let foodX = 0;
+let foodY = 0;
+
+function foodCreate(){
+    foodX = Math.floor(Math.random()*canvas.width);
+    foodY = Math.floor(Math.random()*canvas.height);
+    foodX -= foodX % blockSize;
+    foodY -= foodY % blockSize;
+    ctx.fillRect(foodX, foodY, blockSize, blockSize);
+}
+foodCreate();
+
+function foodCheck(){
+    const first = snake.body[0];
+    if(first.x === foodX && first.y === foodY){
+        console.log("test");
+        snake.feed();
+        foodCreate();
+    }
+}
+
+let updateTimer = setInterval(function (){
     snake.update();
+    foodCheck();
 }, 1000 / targetFPS);
 
-setInterval(function (){
+function gameOver(){
+    clearInterval(updateTimer);
+}
+
+/*setInterval(function (){
     snake.feed();
-}, 1000 / 0.1);
+}, 1000 / 1.1);*/
+
+
+
+
+
+
