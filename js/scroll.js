@@ -8,7 +8,6 @@ content_div.addEventListener("scroll", function (event) {
             let active_entry = document.getElementsByClassName("tableentry active")[0];
             if(active_entry != element[i]){
                 active_entry.className = active_entry.className.replace(" active", "");
-                console.log(active_entry.className + " " + active_entry.id);
                 document.getElementById(element[i].id + "_entry").className += " active";
             }
             return;
