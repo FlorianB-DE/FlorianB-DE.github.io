@@ -8,4 +8,9 @@ canvas{
     margin-left: 25%;
     margin-top: 10%;
     width: 50%;
+    outline: black 3px solid;
+}
+
+div{
+    text-align: center;
 }

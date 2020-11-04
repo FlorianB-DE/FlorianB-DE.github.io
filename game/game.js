@@ -156,12 +156,8 @@ let updateTimer = setInterval(function (){
 
 function gameOver(){
     clearInterval(updateTimer);
+    alert("Game Over");
 }
-
-/*setInterval(function (){
-    snake.feed();
-}, 1000 / 1.1);*/
-
 
 
 
