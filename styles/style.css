@@ -1,0 +1,53 @@
+#mainbody{
+
+    height: 95%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -ms-overflow-style: none;
+
+    scroll-behavior: smooth;
+
+    padding: 4px;
+
+}
+
+#content{
+    position: absolute;
+
+    top: 5px;
+
+    height: 87%;
+
+    width: calc(95% - calc(10em + 80px));
+
+    margin-top: 40px;
+    margin-left: calc(12em + 80px);
+
+    background: #eee;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.16), 0 6px 12px rgba(0,0,0,0.23);
+}
+
+.article{
+    width: 100%;
+    padding-left: 10px;
+}
+
+#mainbody::-webkit-scrollbar{
+    display: none;
+}
+
+body , html{
+
+    font-family: Arial;
+
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+
+}
+
+#followMe {
+    margin-top: 2em;
+}
