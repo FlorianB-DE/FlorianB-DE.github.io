@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <title>Florian Becker</title>
     <link href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.png" rel="icon">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
-<link rel="stylesheet" type="text/css" href="styles/style.css">
 <body>
-<link rel="stylesheet" type="text/css" href="styles/sidebar.css">
 <nav>
-    <div id="sidebar">
+    <div id="sidebar" class="box-shadow">
         <a id="first"></a><br>
-        <a class="tableentry active" id="start_entry" href="#start">Start</a><br>
-        <a class="tableentry" id="university_entry" href="#university">University</a><br>
-        <a class="tableentry" id="projects_entry" href="#projects">Projects</a><br>
-        <a class="tableentry" id="about_entry" href="#about">About</a>
+        <a class="tableentry active" id="start_entry"><span>Start</span></a><br>
+        <a class="tableentry" id="university_entry"><span>University</span></a><br>
+        <a class="tableentry" id="projects_entry"><span>Projects</span></a><br>
+        <a class="tableentry" id="about_entry"><span>About</span></a>
     </div>
 </nav>
-<div id="content">
+<div id="content" class="box-shadow">
     <div id="mainbody">
         <div id="start" class="article">
             <h1>Start</h1>

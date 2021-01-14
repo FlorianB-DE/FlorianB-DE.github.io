@@ -1,3 +1,8 @@
+:root{
+    --shadow-one: rgba(0,0,0,0.16);
+    --shadow-two: rgba(0,0,0,0.23);
+}
+
 #mainbody{
 
     height: 95%;
@@ -27,7 +32,10 @@
     margin-left: calc(12em + 80px);
 
     background: #eee;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.16), 0 6px 12px rgba(0,0,0,0.23);
+}
+
+.box-shadow{
+    box-shadow: 0 6px 12px var(--shadow-one), 0 6px 12px var(--shadow-two);
 }
 
 .article{

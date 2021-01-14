@@ -31,3 +31,11 @@ content_div.onscroll = function () {
         }
     }, 50);
 };
+
+Array.prototype.forEach.call(document.getElementsByClassName("tableentry"), function (element){
+    if (element !== null){
+        element.onclick = function (){
+            content_div.scrollTo(0, document.getElementById(this.id.replace("_entry", "")).offsetTop);
+        }
+    }
+});
