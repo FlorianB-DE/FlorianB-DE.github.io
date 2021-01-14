@@ -15,13 +15,10 @@ content_div.addEventListener("scroll", function (event) {
     }
 });
 
-
-
-let mainbody = document.getElementById("mainbody");
-mainbody.onscroll = function () {
+content_div.onscroll = function () {
     let footer =  document.getElementById("footer");
     let timer = setInterval(function () {
-        if(mainbody.scrollHeight - mainbody.scrollTop <= mainbody.clientHeight) {
+        if(content_div.scrollHeight - content_div.scrollTop <= content_div.clientHeight) {
             let value = parseFloat(window.getComputedStyle(footer).marginBottom);
             if (value < parseInt(window.getComputedStyle(footer).height ) / 5) {
                 value += 2;
