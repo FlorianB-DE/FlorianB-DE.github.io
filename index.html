@@ -1,89 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="hide-scrollbar" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Florian Becker</title>
-    <link href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.png" rel="icon">
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <title>Title</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles/sidebar.css">
-    <style>
-        body{
-            font-family: 'Roboto', sans-serif;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <script type="text/javascript" src="js/app.js"></script>
+    <!--<script type="text/javascript" src="js/interaction_initializer.js"></script>-->
 </head>
 <body>
-<nav>
-    <div id="sidebar" class="box-shadow">
-        <a id="first"></a><br>
-        <a class="tableentry active" id="start_entry"><span>Start</span></a><br>
-        <a class="tableentry" id="university_entry"><span>University</span></a><br>
-        <a class="tableentry" id="projects_entry"><span>Projects</span></a><br>
-        <a class="tableentry" id="about_entry"><span>About</span></a>
+<div class="app" id="slide-1">
+    <div class="head">
+        <!--<video autoplay loop src="media/videoplayback.mp4"></video>-->
+        <canvas id="interactive-header"></canvas>
     </div>
-</nav>
-<div id="content" class="box-shadow">
-    <div id="mainbody">
-        <div id="start" class="article">
-            <h1>Start</h1>
-            Since I was a child I always wanted to create my own video games. Several years later I work with Java, create my own game library and studying computer science.
-        </div><br>
-        <div id="university" class="article">
-            <h1>University</h1>
-            Since October 2019 I'm studying applied computer science at <a href="https://www.ruhr-uni-bochum.de/de" style="text-decoration: none; color: inherit">Ruhr-University Bochum</a>.<br>
-            Since then I've learned C/C++, PHP, JavaScript, CSS, and Python. Before I've only known Java and C#.
-        </div><br>
-        <div id="projects" class="article">
-            <h1>Projects</h1><br>
-            <h3>Homeland Shelter</h3>
-            (<a href="https://drive.google.com/drive/folders/1Wy0CvKFhqFQHul3JWAoabnRIbcd5Xr5w?usp=sharing" target="_blank">download</a>,
-            <a href="https://trello.com/b/JWvGmHTH/projekt" target="_blank">Trello board</a>)<br><br>
-            <b>Homeland Shelter</b> is a Dungeon RPG where you have to collect and equip armor, weapons, etc... to survive. Every Dungeon is unique in the way it is generated.<br>
-            It's been programmed entirely from scratch in Java without any frameworks or libraries  except the standard Java library.
-            <br><br>
-            <i>Screenshots</i><br>
-            <img src="images/homeland_shelter.png" style="width: 49%">
-            <img src="images/homeland_shelter_enemys.png" style="width: 49%"><br>
-            <img src="images/inventory.png" style="width: 49%">
-            <br>
-
-            <h3>Java Game-library</h3>
-            (<a href="https://git.noc.ruhr-uni-bochum.de/beckefp6/oom_project" target="_blank">git</a>)<br><br>
-            An open source game library which was originally created for a Homework at university. For now it only works in 2D but I'll work on 3D support asap. <br>
-            It was also made from scratch in Java and currently comes with my homework integrated. This is what the engine is currently able to produce with minimal effort:
-            <img src="images/engine-footage.png" style="width: 49%"><br>
-            The world is divided in chunks of 16 by 16 blocks which are procedurally generated and therefore infinite.
-            The engine is capable of processing thousands of blocks with their corresponding colliders and detect their collisions without considerable performance issues.<br>
-            The current look on this engine is done for testing purposes only! Therefor it reuses Sprites already used in e.g.: Homeland Shelter
-        </div><br>
-
-        <div id="about" class="article">
-            <h1>About me</h1>
-            <img src="images/self.jpg" style="width: 35%; border: 2px solid beige; border-radius: 10%;" align="right">
-            <p style="font-size: 1.2em">
-                I am Florian and currently studying applied computer science at Ruhr-University Bochum.<br>
-                Im planning of becoming a game developer and am currently working on projects with my friends and colleagues.
-            </p>
+    <div class="content">
+        <div class="main-page">
+            <div class="background"></div>
+            <div class="container"><h1 class="title">
+                <span class="randomly-colored randomly-colored__sorted randomly-colored__background title__text"
+                      data-alpha="0.25" data-reference="lightest" data-query-selector=".content .container">Lorem ipsum</span><br>
+                <span class="title__text--main">Dolor sit amet, test</span></h1></div>
+            <span class="arrow">more</span>
         </div>
     </div>
 </div>
-<link rel="stylesheet" type="text/css" href="styles/footer.css">
-<footer id="footer">
-    <div align="center" id="followMe">Follow me on social media:</div>
-    <br>
-    <div align="center">
-        <a href="https://www.instagram.com/beflo00/">
-            <img src="https://en.instagram-brand.com/wp-content/themes/ig-branding/prj-ig-branding/assets/images/ig-logo-black.svg" class="socialIcon"></a>
-        <a href="https://github.com/FlorianB-DE">
-            <img src="images/github.png" class="socialIcon"></a>
-        <a href="https://git.noc.ruhr-uni-bochum.de/beckefp6">
-            <img src="https://about.gitlab.com/images/devops-tools/gitlab-logo.svg" class="socialIcon"></a>
-        <a href="https://www.reddit.com/user/ShadowArcher21">
-            <img src="https://www.redditinc.com/assets/images/site/logo01.svg" class="socialIcon"></a>
+<div class="app" id="slide-2">
+
+</div>
+<menu class="socials">
+    <div class="button arrow">
+        <span data-text="SOCIALS" data-alttext="HIDE"></span>
     </div>
-</footer>
+    <div class="social-icons">
+        <a target="_blank" href="https://www.instagram.com/beflo00/">
+            <img src="https://en.instagram-brand.com/wp-content/themes/ig-branding/prj-ig-branding/assets/images/ig-logo-black.svg"></a>
+        <a target="_blank" href="https://github.com/FlorianB-DE">
+            <img src="media/github.png"></a>
+        <a target="_blank" href="https://git.noc.ruhr-uni-bochum.de/beckefp6">
+            <img src="https://about.gitlab.com/images/devops-tools/gitlab-logo.svg"></a>
+        <a target="_blank" href="https://www.reddit.com/user/ShadowArcher21">
+            <img src="https://www.redditinc.com/assets/images/site/logo01.svg"></a>
+    </div>
+</menu>
 </body>
-<script type="text/javascript" src="js/scroll.js"></script>
 </html>
