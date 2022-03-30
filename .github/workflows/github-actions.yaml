@@ -1,10 +1,13 @@
-name: compile
+name: build
 on: [push]
+defaults:
+  run:
+    shell: bash
+    working-directory: src
 jobs:
-  compile:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: cd ./src
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
