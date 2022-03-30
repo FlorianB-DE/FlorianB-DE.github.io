@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import {defineProps, inject, PropType} from "vue";
+import {inject, PropType} from "vue";
 import ContentSection from "../interfaces/ContentSection";
 
 const activeSection = inject("activeSection") as () => ContentSection

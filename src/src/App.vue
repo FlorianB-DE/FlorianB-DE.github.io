@@ -6,8 +6,9 @@ import Home from "./components/Home.vue";
 
 import {inject, onMounted} from "vue";
 import Projects from "./components/Projects.vue";
+import ContentSection from "./interfaces/ContentSection";
 
-const sections = inject("sections")
+const sections: Array<ContentSection> = inject("sections") as Array<ContentSection>
 
 onMounted(() => {
   const inViewport: IntersectionObserverCallback = (entries, observer) => {

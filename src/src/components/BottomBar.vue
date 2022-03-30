@@ -14,7 +14,7 @@
 import {inject} from "vue";
 import {ArrowDownIcon} from '@heroicons/vue/solid'
 
-const clickListener = inject("scrollToSection")
+const clickListener = inject("scrollToSection") as () => void
 </script>
 
 <style scoped>
