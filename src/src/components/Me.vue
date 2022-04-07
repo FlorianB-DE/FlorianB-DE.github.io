@@ -1,6 +1,9 @@
 <template>
-  <section id="me" class="flex flex-col overflow-hidden" data-heading="About Me">
-    <div class="flex justify-center items-center flex-col overflow-hidden h-full duration-700">
+  <section id="me" class="flex flex-row overflow-hidden" data-heading="About Me">
+    <article class="pt-20 pl-10 w-1/3 h-full text-white hidden xl:block">
+      <p class="text-2xl opacity-50">this is some sample text</p>
+    </article>
+    <figure class="flex justify-center items-center flex-col overflow-hidden h-full duration-700 w-full xl:w-1/3">
       <div class="part">
         <div
             class="head bg-amber-100 rounded-t-[40%] rounded-b-[10%] flex flex-col relative justify-center items-center">
@@ -23,7 +26,8 @@
         <div class="body h-40 bg-green-600 rounded-3xl"/>
         <div class="arm rotate-[-45deg] bg-amber-100 rounded-2xl h-32 relative z-0 right"/>
       </div>
-    </div>
+    </figure>
+    <article class="w-1/3 h-full hidden xl:block"></article>
   </section>
 </template>
 
