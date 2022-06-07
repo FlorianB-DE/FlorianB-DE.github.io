@@ -1,11 +1,12 @@
 version: "3.9"
 services:
   node:
-    build:
-      context: .docker/Node
+    image: node:lts-slim
     volumes:
       - ./src:/app
     tty: true
     stdin_open: true
+    working_dir: /app
+    command: bash -c "npm i ; npm run dev"
     ports:
       - "3000:3000"
