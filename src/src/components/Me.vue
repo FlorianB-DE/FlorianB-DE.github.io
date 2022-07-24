@@ -10,7 +10,7 @@
       <div class="part">
         <div
           class="head bg-amber-100 rounded-t-[40%] rounded-b-[10%] flex flex-col relative justify-center items-center">
-          <img class="absolute hair top-0 w-[20rem]" src="hair.png">
+          <img class="absolute top-0 w-[20rem]" id="hair" src="">
           <div class="eyes w-full flex justify-around mt-4">
             <div class="eye circle bg-green-800 w-5 h-5 flex border-white border-2">
               <div class="bg-black w-1.5 aspect-square m-auto circle" />
@@ -41,11 +41,15 @@
 <script lang="ts" setup>
 import {inject, onMounted} from "vue";
 import ContentSection from "../interfaces/ContentSection";
+import hair from "../assets/hair.png";
 
 onMounted(() => {
   const el = document.getElementById("me");
-  if (el)
-    (inject("sections") as Array<ContentSection>).push({el: el, active: false})
+  if (el) {
+    (inject("sections") as Array<ContentSection>).push({ el: el, active: false });
+    (el.querySelector("#hair") as HTMLImageElement).src = hair;
+  }
+
 })
 </script>
 
@@ -63,7 +67,7 @@ onMounted(() => {
   height: max(6rem, 10vh);
 }
 
-.head .hair {
+.head #hair {
   transform: scale(1.3, 1.3);
 }
 .mouth {
