@@ -28,6 +28,8 @@ document.addEventListener("wheel", event => {
     }
 })
 
+window.addEventListener("resize", () => scrollToSection(activeIndex() - 1))
+
 let touchStart = 0
 document.addEventListener("touchstart", event => touchStart = event.touches[0].clientY)
 document.addEventListener("touchend", event => {

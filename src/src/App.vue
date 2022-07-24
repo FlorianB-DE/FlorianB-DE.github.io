@@ -41,7 +41,9 @@ onMounted(() => {
 <style>
 @import "styles.css";
 
-html, body, #app {
+html,
+body,
+#app {
   width: 100%;
 }
 

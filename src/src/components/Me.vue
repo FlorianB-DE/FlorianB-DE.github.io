@@ -1,19 +1,22 @@
 <template>
-  <section id="me" class="flex flex-row overflow-hidden" data-heading="About Me">
-    <article class="pt-20 pl-10 w-1/3 h-full text-white hidden xl:block">
-      <p class="text-2xl opacity-50">this is some sample text</p>
+  <section id="me" class="flex flex-row portrait:flex-wrap overflow-hidden" data-heading="About Me" data-in_viewport="">
+    <article
+      class="portrait:order-1 mt-20 pl-10 landscape:w-1/3 landscape:h-full portrait:h-1/3 text-white duration-1000"
+      data-in_viewport="fade-left">
+      <p class="text-2xl opacity-60">this is some sample text</p>
     </article>
-    <figure class="flex justify-center items-center flex-col overflow-hidden h-full duration-700 w-full xl:w-1/3">
+    <figure
+      class="portrait:order-3 flex justify-center items-center flex-col overflow-hidden portrait:h-2/3 landscape:h-full duration-700 w-full xl:w-1/3">
       <div class="part">
         <div
-            class="head bg-amber-100 rounded-t-[40%] rounded-b-[10%] flex flex-col relative justify-center items-center">
-          <!--        <svg class="absolute hair"></svg>-->
+          class="head bg-amber-100 rounded-t-[40%] rounded-b-[10%] flex flex-col relative justify-center items-center">
+          <img class="absolute hair top-0 w-[20rem]" src="hair.png">
           <div class="eyes w-full flex justify-around mt-4">
             <div class="eye circle bg-green-800 w-5 h-5 flex border-white border-2">
-              <div class="bg-black w-1.5 aspect-square m-auto circle"/>
+              <div class="bg-black w-1.5 aspect-square m-auto circle" />
             </div>
             <div class="eye circle bg-green-800 w-5 h-5 flex border-white border-2">
-              <div class="bg-black w-1.5 aspect-square m-auto circle"/>
+              <div class="bg-black w-1.5 aspect-square m-auto circle" />
             </div>
           </div>
           <div class="w-full pt-4 flex justify-center">
@@ -22,12 +25,16 @@
         </div>
       </div>
       <div class="part">
-        <div class="arm rotate-45 bg-amber-100 rounded-2xl h-32 relative z-0"/>
-        <div class="body h-40 bg-green-600 rounded-3xl"/>
-        <div class="arm rotate-[-45deg] bg-amber-100 rounded-2xl h-32 relative z-0 right"/>
+        <div class="arm rotate-[50deg] bg-amber-100 rounded-2xl h-32 relative z-0" />
+        <div class="body z-[1] h-40 zinde bg-green-600 rounded-3xl" />
+        <div class="arm rotate-[-45deg] bg-amber-100 rounded-2xl h-32 relative z-0 right" />
       </div>
     </figure>
-    <article class="w-1/3 h-full hidden xl:block"></article>
+    <article
+      class="portrait:order-2 mt-20 pr-10 landscape:w-1/3 landscape:h-full portrait:h-1/3 text-white duration-1000 text-right"
+      data-in_viewport="fade-right">
+      <p class="text-2xl opacity-60">this is some sample text</p>
+    </article>
   </section>
 </template>
 
@@ -56,11 +63,11 @@ onMounted(() => {
   height: max(6rem, 10vh);
 }
 
+.head .hair {
+  transform: scale(1.3, 1.3);
+}
 .mouth {
   border: 3px inset #3a0000;
-}
-
-.eye {
 }
 
 .arm {
@@ -78,5 +85,14 @@ onMounted(() => {
 
 .body {
   width: min(8rem, 30%);
+}
+@media (orientation: portrait) {
+  article {
+    flex: 0 0 50%;
+  }
+
+  figure {
+    flex: 0 0 100%;
+  }
 }
 </style>
