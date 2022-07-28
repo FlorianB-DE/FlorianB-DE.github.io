@@ -1,11 +1,10 @@
 <template>
     <aside class="fixed top-3/4 flex flex-row right-0 transition-transform" ref="el">
         <a href="javascript:void(0)" id="left-arrow" class="circle animate-pulse">
-            <ArrowLeftIcon class="w-14 text-inherit transition-transform" />
+            <ArrowLeftIcon class="text-inherit transition-transform" />
         </a>
         <a href="https://github.com/FlorianB-DE">
-            <img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"
-                class="circle border-rad">
+            <img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg" class="circle">
         </a>
     </aside>
 </template>
@@ -52,7 +51,8 @@ aside.open {
     transform: unset;
 }
 
-img {
+img,
+svg {
     @apply w-14
 }
 </style>
