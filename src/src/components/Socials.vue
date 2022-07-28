@@ -1,5 +1,5 @@
 <template>
-    <aside class="fixed portrait:top-[80vh] flex flex-row right-0 transition-transform" ref="el">
+    <aside class="fixed top-3/4 flex flex-row right-0 transition-transform" ref="el">
         <a href="javascript:void(0)" id="left-arrow" class="circle animate-pulse">
             <ArrowLeftIcon class="w-14 text-inherit transition-transform" />
         </a>
