@@ -54,10 +54,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.circle {
-  border-radius: 100%;
-}
-
 .part {
   @apply w-full flex justify-center
 }

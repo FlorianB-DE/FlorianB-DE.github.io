@@ -7,6 +7,7 @@ import Home from "./components/Home.vue";
 import {inject, onMounted} from "vue";
 import Projects from "./components/Projects.vue";
 import ContentSection from "./interfaces/ContentSection";
+import Socials from "./components/Socials.vue";
 
 const sections: Array<ContentSection> = inject("sections") as Array<ContentSection>
 
@@ -27,19 +28,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="bg-gray-800 w-full h-full">
-    <TopBar :items="sections"/>
-    <Home/>
-    <hr/>
-    <Me/>
-    <hr/>
+  <main class="bg-gray-800 w-full h-full relative">
+    <TopBar :items="sections" />
+    <Home />
+    <hr />
+    <Me />
+    <hr />
     <Projects />
-    <BottomBar/>
+    <BottomBar />
+    <Socials />
   </main>
 </template>
 
 <style>
-@import "styles.css";
+@import "styles/styles.css";
 
 html,
 body,
