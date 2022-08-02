@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import BottomBar from "./components/BottomBar.vue";
+import Footer from "./components/Footer.vue";
 import TopBar from "./components/TopBar.vue";
 import Me from "./components/Me.vue";
 import Home from "./components/Home.vue";
@@ -35,8 +35,7 @@ onMounted(() => {
     <Me />
     <hr />
     <Projects />
-    <BottomBar />
-    <Socials />
+    <Footer />
   </main>
 </template>
 

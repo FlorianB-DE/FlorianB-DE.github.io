@@ -1,58 +1,25 @@
 <template>
-    <aside class="fixed top-3/4 flex flex-row right-0 transition-transform" ref="el">
-        <a href="javascript:void(0)" id="left-arrow" class="circle animate-pulse">
-            <ArrowLeftIcon class="text-inherit transition-transform" />
-        </a>
-        <a href="https://github.com/FlorianB-DE">
-            <img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg" class="circle">
-        </a>
-    </aside>
+    <a href="https://github.com/FlorianB-DE" target="_blank" class="order-1">
+        <img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"
+            :class="props.classes">
+    </a>
+    <a href="https://www.instagram.com/beflo00/" target="_blank" class="order-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Instagram.svg" :class="props.classes">
+    </a>
+    <a href="https://git.noc.ruhr-uni-bochum.de/beckefp6" target="_blank" class="order-4">
+        <img src="https://gitlab.ruhr-uni-bochum.de/uploads/-/system/appearance/favicon/1/favicon_gitlab_max32px.ico"
+            :class="props.classes">
+    </a>
+    <a href="https://gitlab.com/florianq-two" target="_blank" class="order-5">
+        <img src="https://about.gitlab.com/nuxt-images/company/company-tanuki.svg" :class="props.classes">
+    </a>
 </template>
 
 <script setup lang="ts">
-import { ArrowLeftIcon } from "@heroicons/vue/solid";
-import { onMounted, ref } from "vue";
-
-const el = ref<HTMLElement>();
-
-onMounted(() => {
-    const la = el.value?.querySelector<HTMLElement>("#left-arrow")
-    if (!la) return;
-
-    la.onclick = () => {
-        el.value?.classList.toggle("open")
-    }
+import { defineProps } from "vue";
+const props = defineProps({
+    classes: String
 })
 </script>
 <style scoped>
-#left-arrow {
-    opacity: .6;
-    color: var(--github-color);
-    --border-thickness: 3px;
-    border: var(--border-thickness) solid var(--github-color);
-}
-
-#left-arrow>svg {
-    width: calc(3.5rem - 2 * var(--border-thickness))
-}
-
-aside {
-    transform: translateX(calc(3.5rem * 1));
-    border-bottom-left-radius: 2rem;
-    border-top-left-radius: 2rem;
-    background: rgba(31, 41, 55, .85);
-}
-
-.open #left-arrow>svg {
-    transform: rotateZ(180deg);
-}
-
-aside.open {
-    transform: unset;
-}
-
-img,
-svg {
-    @apply w-14
-}
 </style>
