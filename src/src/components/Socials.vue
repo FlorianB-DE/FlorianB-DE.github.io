@@ -4,7 +4,7 @@
             :class="props.classes">
     </a>
     <a href="https://www.linkedin.com/in/florian-becker-6749a7205/" target="_blank" id="linkedin" class="order-2">
-        <img src="https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" :class="props.classes">
+        <img :class="props.classes">
     </a>
     <a href="https://git.noc.ruhr-uni-bochum.de/beckefp6" target="_blank" class="order-4">
         <img src="https://gitlab.ruhr-uni-bochum.de/uploads/-/system/appearance/favicon/1/favicon_gitlab_max32px.ico"
