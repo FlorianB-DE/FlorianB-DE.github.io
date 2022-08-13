@@ -20,7 +20,7 @@ import { defineProps, onMounted } from "vue";
 import linkedin from "../assets/LI-In-Bug.png";
 
 onMounted(() => {
-  const el = document.querySelector("#linkedin < img") as HTMLImageElement | null;
+  const el = document.querySelector("#linkedin > img") as HTMLImageElement | null;
   if (!el) return;
   el.src = linkedin;
 });
