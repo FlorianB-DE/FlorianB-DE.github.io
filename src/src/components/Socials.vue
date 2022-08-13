@@ -3,7 +3,7 @@
         <img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"
             :class="props.classes">
     </a>
-    <a href="https://www.linkedin.com/in/florian-becker-6749a7205/" target="_blank" class="order-2">
+    <a href="https://www.linkedin.com/in/florian-becker-6749a7205/" target="_blank" id="linkedin" class="order-2">
         <img src="https://brand.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" :class="props.classes">
     </a>
     <a href="https://git.noc.ruhr-uni-bochum.de/beckefp6" target="_blank" class="order-4">
@@ -17,6 +17,13 @@
 
 <script setup lang="ts">
 import { defineProps } from "vue";
+import linkedin from "../assets/LI-In-Bug.png";
+
+onMounted(() => {
+  const el = document.getElementById<HTMLImageElement>("linkedin");
+  if (el)
+    el.src = linkedin;
+})
 const props = defineProps({
     classes: String
 })
