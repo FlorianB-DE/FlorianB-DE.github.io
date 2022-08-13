@@ -16,14 +16,14 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, onMounted } from "vue";
 import linkedin from "../assets/LI-In-Bug.png";
 
 onMounted(() => {
   const el = document.getElementById<HTMLImageElement>("linkedin");
-  if (el)
-    el.src = linkedin;
-})
+  if (!el) return;
+  el.src = linkedin;
+});
 const props = defineProps({
     classes: String
 })
