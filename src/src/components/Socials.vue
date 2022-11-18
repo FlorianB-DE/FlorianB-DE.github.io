@@ -10,23 +10,29 @@
         <img src="https://gitlab.ruhr-uni-bochum.de/uploads/-/system/appearance/favicon/1/favicon_gitlab_max32px.ico"
             :class="props.classes">
     </a>
-    <a href="https://gitlab.com/florianq-two" target="_blank" class="order-5">
-        <img src="https://about.gitlab.com/nuxt-images/company/company-tanuki.svg" :class="props.classes">
+    <a href="https://gitlab.com/florianq-two" target="_blank" id="gitlab" class="order-5">
+        <img :class="props.classes">
     </a>
 </template>
 
 <script setup lang="ts">
 import { defineProps, onMounted } from "vue";
 import linkedin from "../assets/LI-In-Bug.png";
+import gitlab_icon from "../assets/gitlab.svg"
 
 onMounted(() => {
-  const el = document.querySelector("#linkedin > img") as HTMLImageElement | null;
-  if (!el) return;
-  el.src = linkedin;
+    const linkedin_el = document.querySelector("#linkedin > img") as HTMLImageElement | null,
+        gitlab_el = document.querySelector("#gitlab > img") as HTMLImageElement | null;
+    if (!linkedin_el || !gitlab_el) return;
+    linkedin_el.src = linkedin;
+    gitlab_el.src = gitlab_icon;
+
+
 });
 const props = defineProps({
     classes: String
 })
 </script>
 <style scoped>
+
 </style>

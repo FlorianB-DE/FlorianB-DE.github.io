@@ -1,0 +1,16 @@
+{
+	"name": "florian website",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "node",
+	"workspaceFolder": "/app",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Vue.volar",
+				"csstools.postcss",
+				"bradlc.vscode-tailwindcss"
+			]
+		}
+	}
+}
