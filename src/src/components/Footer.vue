@@ -12,11 +12,11 @@
       </menu>
     </aside>
 
-    <aside class="fixed top-3/4 flex flex-row right-0 transition-transform socials" v-show="portrait" ref="el">
+    <aside class="fixed top-3/4 flex flex-row right-0 transition-transform socials z-50" v-show="portrait" ref="el">
       <a href="javascript:void(0)" id="left-arrow" class="circle animate-pulse">
         <ArrowLeftIcon class="text-inherit transition-transform w-14" />
       </a>
-      <Socials classes="w-14" />
+      <Socials classes="w-14 m-auto p-1" />
     </aside>
   </footer>
 </template>

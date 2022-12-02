@@ -3,7 +3,7 @@
         <img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg"
             :class="props.classes">
     </a>
-    <a href="https://www.linkedin.com/in/florian-becker-6749a7205/" target="_blank" id="linkedin" class="order-2">
+    <a href="https://www.linkedin.com/in/florian-becker-6749a7205/" target="_blank" id="linkedin" class="order-2 flex">
         <img :class="props.classes">
     </a>
     <a href="https://git.noc.ruhr-uni-bochum.de/beckefp6" target="_blank" class="order-4">
