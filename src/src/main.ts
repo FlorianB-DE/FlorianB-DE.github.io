@@ -1,4 +1,4 @@
-import {createApp, reactive} from 'vue'
+import { createApp, reactive } from 'vue'
 import App from './App.vue'
 import ContentSection from "./interfaces/ContentSection";
 
@@ -34,7 +34,8 @@ let touchStart = 0
 document.addEventListener("touchstart", event => touchStart = event.touches[0].clientY)
 document.addEventListener("touchend", event => {
     const touchEnd = event.changedTouches[0].clientY
-    scrollToSection(Math.sign(Number(touchStart > touchEnd + 5) - .5))
+    if (touchStart - touchEnd > window.innerHeight / 10)
+        scrollToSection(Math.sign(Number(touchStart > touchEnd + 5) - .5))
 })
 
 createApp(App)
