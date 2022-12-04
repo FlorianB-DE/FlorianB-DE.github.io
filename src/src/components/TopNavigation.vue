@@ -1,6 +1,6 @@
 <template>
   <nav class="fixed w-full top-0 flex-row flex p-2 z-50 text-white" :class="{ closed: !open }" ref="nav">
-    <div class="flex lg:justify-start justify-between ml-auto w-3/4">
+    <div class="flex lg:justify-start justify-between ml-auto lg:w-full w-3/4">
       <a v-for="item, n in items" :key="item.el.id" class="ml-2 mr-2 cursor-pointer no-select icon"
         @click="dispatcher(item)" :style="`--item-no: ${n}`">
         <span :class="item.active ? 'font-bold' : ''" class="text-2xl hidden lg:inline"
