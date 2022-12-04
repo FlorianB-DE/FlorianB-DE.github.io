@@ -2,6 +2,9 @@ import { createApp, reactive } from 'vue'
 import App from './App.vue'
 import ContentSection from "./interfaces/ContentSection";
 
+import css from './styles/styles.css';
+
+
 const sections = reactive([] as Array<ContentSection>),
     activeIndex = () => {
         const index = sections.findIndex(element => element.active)
@@ -34,7 +37,7 @@ let touchStart = 0
 document.addEventListener("touchstart", event => touchStart = event.touches[0].clientY)
 document.addEventListener("touchend", event => {
     const touchEnd = event.changedTouches[0].clientY
-    if (touchStart - touchEnd > window.innerHeight / 10)
+    if (Math.abs(touchStart - touchEnd) > window.innerHeight / 10)
         scrollToSection(Math.sign(Number(touchStart > touchEnd + 5) - .5))
 })
 

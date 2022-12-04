@@ -9,7 +9,8 @@
 			"extensions": [
 				"Vue.volar",
 				"csstools.postcss",
-				"bradlc.vscode-tailwindcss"
+				"bradlc.vscode-tailwindcss",
+				"SimonSiefke.prettier-vscode"
 			]
 		}
 	}

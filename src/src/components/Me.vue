@@ -42,11 +42,13 @@
 import {inject, onMounted} from "vue";
 import ContentSection from "../interfaces/ContentSection";
 import hair from "../assets/hair.png";
+import { InformationCircleIcon as outlineIcon } from "@heroicons/vue/24/outline";
+import { InformationCircleIcon as solidIcon } from "@heroicons/vue/24/solid";
 
 onMounted(() => {
   const el = document.getElementById("me");
   if (el) {
-    (inject("sections") as Array<ContentSection>).push({ el: el, active: false });
+    (inject("sections") as Array<ContentSection>).push({ el: el, active: false, icon: [outlineIcon, solidIcon]});
     (el.querySelector("#hair") as HTMLImageElement).src = hair;
   }
 

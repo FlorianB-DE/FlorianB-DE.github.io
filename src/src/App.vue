@@ -1,13 +1,12 @@
 <script lang="ts" setup>
-import Footer from "./components/Footer.vue";
-import TopBar from "./components/TopBar.vue";
+
+import TopNavigation from "./components/TopNavigation.vue";
 import Me from "./components/Me.vue";
 import Home from "./components/Home.vue";
 
 import {inject, onMounted} from "vue";
 import Projects from "./components/Projects.vue";
 import ContentSection from "./interfaces/ContentSection";
-import Socials from "./components/Socials.vue";
 
 const sections: Array<ContentSection> = inject("sections") as Array<ContentSection>
 
@@ -29,34 +28,15 @@ onMounted(() => {
 
 <template>
   <main class="bg-gray-800 w-full h-full relative">
-    <TopBar :items="sections" />
+    <TopNavigation :items="sections" />
     <Home />
     <hr />
     <Me />
     <hr />
     <Projects />
-    <Footer />
+    <footer class="h-[10vh] w-full"></footer>
   </main>
 </template>
 
 <style>
-@import "styles/styles.css";
-
-html,
-body,
-#app {
-  width: 100%;
-}
-
-body {
-  overflow: hidden;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-section {
-  @apply h-[100vh] w-full
-}
 </style>
