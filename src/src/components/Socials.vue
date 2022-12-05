@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import gitlabIcon from "../assets/gitlab.svg";
 import githubIcon from "../assets/github.svg";
-import linkedinIcon from "../assets/linkedIn.png";
+import linkedinIcon from "../assets/LinkedIn.png";
 </script>
 <style>
 .background-bar {
