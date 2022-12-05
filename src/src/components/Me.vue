@@ -10,7 +10,7 @@
       <div class="part">
         <div
           class="head bg-amber-100 rounded-t-[40%] rounded-b-[10%] flex flex-col relative justify-center items-center h-24">
-          <img class="absolute top-0 w-[20rem]" id="hair" src="">
+          <img class="absolute top-[-10px] w-[20rem]" id="hair" src="">
           <div class="eyes w-full flex justify-around mt-4">
             <div class="eye circle bg-green-800 w-5 h-5 flex border-white border-2">
               <div class="bg-black w-1.5 aspect-square m-auto circle" />

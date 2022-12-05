@@ -1,5 +1,5 @@
 <template>
-<aside class="absolute p-5 text-white font-extralight">
+<aside class="absolute z-10 p-5 text-white font-extralight">
 <slot />
 </aside>
 </template>

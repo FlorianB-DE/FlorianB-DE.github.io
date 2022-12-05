@@ -7,6 +7,7 @@ import Home from "./components/Home.vue";
 import {inject, onMounted} from "vue";
 import Projects from "./components/Projects.vue";
 import ContentSection from "./interfaces/ContentSection";
+import Socials from "./components/Socials.vue";
 
 const sections: Array<ContentSection> = inject("sections") as Array<ContentSection>
 
@@ -27,8 +28,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="bg-gray-800 w-full h-full relative">
+  <main class="bg-gray-800 w-full h-full relative z-0">
     <TopNavigation :items="sections" />
+    <!--<Socials />-->
     <Home />
     <hr />
     <Me />
