@@ -10,7 +10,8 @@
 				"Vue.volar",
 				"csstools.postcss",
 				"bradlc.vscode-tailwindcss",
-				"SimonSiefke.prettier-vscode"
+				"SimonSiefke.prettier-vscode",
+				"redhat.vscode-xml"
 			]
 		}
 	}
