@@ -5,14 +5,14 @@
     </HoverBox>
     <div class="text-white p-20 flex max-h-full justify-center gap-4 projects--cards__container lg:flex-row flex-col">
       <article v-for="project, index in projects"
-        class="aspect-square w-full lg:w-2/5 border hover:scale-105 transition-transform relative card">
+        class="lg:aspect-square h-fit w-full lg:w-2/5 border hover:scale-105 transition-transform relative card">
         <img :src="getImageFile(project.image)" :alt="`project ${project.title} image`"
-          class="absolute w-full h-full opacity-25 object-cover">
-        <div class="w-full h-full p-8 mix-blend-difference">
+          class="absolute w-full h-full opacity-25 object-cover z-[-1]">
+        <div class="w-full h-full p-8 lg:mix-blend-difference">
           <div>
             <h2 class="text-2xl">{{ project.title }}</h2>
           </div>
-          <div class="card-content" v-html="getHTMLfromMD(project.mdFile)"></div>
+          <div class="card-content" v-html="getHTMLfromMD(project.mdFile)" />
         </div>
       </article>
     </div>
@@ -20,17 +20,18 @@
 </template>
 
 <script setup lang="ts">
+
 import { inject, onMounted } from "vue";
 import ContentSection from "../interfaces/ContentSection";
 import HoverBox from "./HoverBox.vue";
 import { CommandLineIcon as outlineIcon } from "@heroicons/vue/24/outline";
 import { CommandLineIcon as solidIcon } from "@heroicons/vue/24/solid";
 import showdown from "showdown";
-import projects from "../assets/projects/projects.json";
+import projects from "../content/projects/projects.json";
 
-const project_data = import.meta.glob('../assets/projects/*.md', { as: "raw", eager: true });
+const project_data = import.meta.glob('../content/projects/*.md', { as: "raw", eager: true });
 const project_images = import.meta.glob(
-  ['../assets/projects/*.png', '../assets/projects/*.jpg', '../assets/projects/*.jpeg', '../assets/projects/*.gif'], { eager: true, import: "default" }) as Record<string, string>;
+  ['../content/projects/*.png', '../content/projects/*.jpg', '../content/projects/*.jpeg', '../content/projects/*.gif'], { eager: true, import: "default" }) as Record<string, string>;
 
 onMounted(() => {
   const el = document.getElementById("projects");
@@ -52,10 +53,10 @@ const getHTMLfromMD = (fileName: string): string => {
   return converter.makeHtml(project_data[getMDFile(fileName)])
 }
 
-
 </script>
 
 <style>
+
 div.projects--cards__container>article.card:hover>img {
   opacity: 1;
 }
@@ -63,4 +64,5 @@ div.projects--cards__container>article.card:hover>img {
 div.projects--cards__container > article.card div.card-content a {
   @apply underline;
 }
+
 </style>
