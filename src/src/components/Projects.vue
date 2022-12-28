@@ -8,7 +8,7 @@
         class="lg:aspect-square h-fit w-full lg:w-2/5 border hover:scale-105 transition-transform relative card">
         <img :src="getImageFile(project.image)" :alt="`project ${project.title} image`"
           class="absolute w-full h-full opacity-25 object-cover z-[-1]">
-        <div class="w-full h-full p-8 lg:mix-blend-difference">
+        <div class="w-full h-full p-8 hover:mix-blend-difference">
           <div>
             <h2 class="text-2xl">{{ project.title }}</h2>
           </div>
@@ -22,16 +22,17 @@
 <script setup lang="ts">
 
 import { inject, onMounted } from "vue";
-import ContentSection from "../interfaces/ContentSection";
-import HoverBox from "./HoverBox.vue";
 import { CommandLineIcon as outlineIcon } from "@heroicons/vue/24/outline";
 import { CommandLineIcon as solidIcon } from "@heroicons/vue/24/solid";
+import ContentSection from "../interfaces/ContentSection";
+import HoverBox from "./HoverBox.vue";
 import showdown from "showdown";
 import projects from "../content/projects/projects.json";
 
 const project_data = import.meta.glob('../content/projects/*.md', { as: "raw", eager: true });
 const project_images = import.meta.glob(
-  ['../content/projects/*.png', '../content/projects/*.jpg', '../content/projects/*.jpeg', '../content/projects/*.gif'], { eager: true, import: "default" }) as Record<string, string>;
+  ['../content/projects/*.png', '../content/projects/*.jpg', '../content/projects/*.jpeg', '../content/projects/*.gif'], { eager: true, import: "default" }
+) as Record<string, string>;
 
 onMounted(() => {
   const el = document.getElementById("projects");
@@ -56,13 +57,11 @@ const getHTMLfromMD = (fileName: string): string => {
 </script>
 
 <style>
-
 div.projects--cards__container>article.card:hover>img {
   opacity: 1;
 }
 
-div.projects--cards__container > article.card div.card-content a {
+div.projects--cards__container>article.card div.card-content a {
   @apply underline;
 }
-
 </style>
