@@ -1,12 +1,12 @@
 [
-    {
-        "title": "Bootstrap-Style Double Slider",
-        "image": "npmjs-logo",
-        "mdFile": "bss-double-slider"
-    },
-    {
-        "title": "Testproject",
-        "image": "hello_world",
-        "mdFile": "testproject"
-    }
+	{
+		"title": "Bootstrap-Style Double Slider",
+		"image": "npmjs-logo",
+		"mdFile": "bss-double-slider"
+	},
+	{
+		"title": "Testproject",
+		"image": "hello_world",
+		"mdFile": "testproject"
+	}
 ]
