@@ -11,9 +11,15 @@
 		<div
 			class="projects--cards__container flex max-h-full flex-col justify-center gap-4 p-20 text-white lg:flex-row"
 		>
-			<article
+			<FractionSlider :max="projects.length">
+				<template slot:0>
+					<span>test</span>
+				</template>
+			</FractionSlider>
+
+			<!-- <article
 				v-for="(project, index) in projects"
-				class="card relative h-fit w-full border transition-transform hover:scale-105 lg:aspect-square lg:w-2/5"
+				class=""
 			>
 				<img
 					:src="getImageFile(project.image)"
@@ -26,15 +32,16 @@
 					</div>
 					<div class="card-content" v-html="getHTMLfromMD(project.mdFile)" />
 				</div>
-			</article>
+			</article> -->
 		</div>
 	</section>
 </template>
 
 <script setup lang="ts">
-import { inject, onMounted } from 'vue';
+import { inject, onMounted, ref } from 'vue';
 import { CommandLineIcon as outlineIcon } from '@heroicons/vue/24/outline';
 import { CommandLineIcon as solidIcon } from '@heroicons/vue/24/solid';
+import FractionSlider from './fraction_slider/FractionSlider.vue';
 import ContentSection from '../interfaces/ContentSection';
 import HoverBox from './HoverBox.vue';
 import showdown from 'showdown';
@@ -83,12 +90,4 @@ const getHTMLfromMD = (fileName: string): string => {
 };
 </script>
 
-<style>
-div.projects--cards__container > article.card:hover > img {
-	opacity: 1;
-}
-
-div.projects--cards__container > article.card div.card-content a {
-	@apply underline;
-}
-</style>
+<style></style>
